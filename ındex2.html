@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayan Spor Pilates | Profesyonel Pilates Deneyimi</title>
+    <style>
+        :root {
+            --primary-color: #ff6a00; /* Canlı Turuncu */
+            --primary-hover: #e65c00;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-light: #f4f4f4;
+            --text-muted: #aaaaaa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Menüye tıklayınca yumuşak kayma */
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        header {
+            background-color: #000000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Bölümü */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1920&q=80') center/cover;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Buton ve Pulse Animasyonu */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.05); /* Üzerine gelince hafif büyüme */
+        }
+
+        .btn-pulse {
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 106, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0); }
+        }
+
+        /* Ortak Seksion Ayarları */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+        }
+
+        /* Scroll ile Belirme (Fade In) Animasyonu Sınıfları */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hizmetler */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 106, 0, 0.15);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Hakkımızda & İletişim Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info strong {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        footer p {
+            color: var(--text-muted);
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Bayan Spor <span>Pilates</span></a>
+        <nav>
+            <ul>
+                <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>Sağlıklı ve Formda Bir Yaşam <span>Sizinle Başlar</span></h1>
+            <p>Bağcılar'da sadece kadınlara özel, uzman eğitmenler eşliğinde profesyonel Aletli Pilates ve Reformer deneyimi.</p>
+            <a href="https://wa.me/905433930698" class="btn btn-pulse" target="_blank">Hemen Randevu Al</a>
+        </div>
+    </section>
+
+    <section id="hizmetler">
+        <h2 class="section-title fade-in">Eksiksiz Hizmet <span>Deneyimi</span></h2>
+        <div class="services-grid">
+            <div class="service-card fade-in" style="transition-delay: 0.1s;">
+                <h3>Aletli Pilates & Cadillac</h3>
+                <p>Son teknoloji ekipmanlarımızla bedeninizi esnetin, güçlendirin ve duruş bozukluklarınızı giderin.</p>
+            </div>
+            <div class="service-card fade-in" style="transition-delay: 0.3s;">
+                <h3>Bireysel Programlar</h3>
+                <p>Kişisel hedeflerinize ve vücut yapınıza en uygun, sadece size özel hazırlanan birebir dersler.</p>
+            </div>
+            <div class="service-card fade-in" style="transition-delay: 0.5s;">
+                <h3>Deneyimli Eğitmenler</h3>
+                <p>Alanında uzman ve sertifikalı kadın eğitmenlerimizle güvenli ve verimli bir çalışma ortamı.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="hakkimizda" style="background-color: #171717;">
+        <div class="info-grid">
+            <div class="fade-in">
+                <h2 class="section-title" style="text-align: left;">Sadece Kadınlara Özel <span>Güvenli Alan</span></h2>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Bağcılar'da kadınlara özel olarak hizmet veren pilates salonumuz, sağlıklı yaşamı hayatın merkezine taşımak isteyen tüm kadınlar için samimi, hijyenik ve motivasyon dolu bir ortam sunuyor.</p>
+                <p style="color: var(--text-muted);">Amacımız her yaş grubundan kadına pilatesin sağladığı esneklik, güç ve ruhsal dengeyi kazandırmak. Modern ekipmanlarımızla kendinizi rahat hissedeceğiniz bir atmosfer hazırladık.</p>
+            </div>
+            <div class="contact-info fade-in" style="transition-delay: 0.3s;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.5rem;">Çalışma Saatlerimiz</h3>
+                <p><strong>Pzt - Çar:</strong> 09:00 - 23:00</p>
+                <p><strong>Per - Cum:</strong> 09:00 - 22:00</p>
+                <p><strong>Cumartesi:</strong> 09:00 - 18:00</p>
+                <p><strong>Pazar:</strong> Kapalı</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="iletisim">
+        <h2 class="section-title fade-in">Bize <span>Ulaşın</span></h2>
+        <div class="info-grid">
+            <div class="contact-info fade-in">
+                <p><strong>Adres:</strong> 712. Sk. No:10 Daire:31, Bağcılar / İstanbul</p>
+                <p><strong>Telefon:</strong> 0543 393 06 98</p>
+                <br>
+                <a href="https://wa.me/905433930698" class="btn btn-pulse" target="_blank">WhatsApp'tan Yazın</a>
+            </div>
+            <div class="fade-in" style="width: 100%; height: 300px; background-color: #333; border-radius: 10px; display: flex; align-items: center; justify-content: center; transition-delay: 0.3s;">
+                <p style="color: var(--text-muted);">[Google Haritalar Görünümü]</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Bayan Spor Pilates. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Elementin %15'i ekranda görününce animasyon başlar
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // İstersen animasyon bir kere oynadıktan sonra izlemeyi bırakabilirsin:
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // fade-in sınıfına sahip tüm elementleri bul ve izlemeye başla
+        document.querySelectorAll('.fade-in').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
