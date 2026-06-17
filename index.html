@@ -37,7 +37,7 @@
         header {
             background-color: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(10px);
-            padding: 1.2rem 5%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -47,15 +47,37 @@
             border-bottom: 1px solid #222;
         }
 
-        .logo {
+        /* YENİ EKLENEN LOGO KISMI CSS */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .site-logo-img {
+            height: 45px;
+            width: auto;
+            /* Mor logonun siyah arka planda patlaması için ayarlar */
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 4px 8px;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(138, 43, 226, 0.3); /* Morumsu bir ışıltı */
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover .site-logo-img {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
             font-size: 1.6rem;
             font-weight: 800;
             color: var(--text-light);
-            text-decoration: none;
             letter-spacing: 1px;
         }
 
-        .logo span {
+        .logo-text span {
             color: var(--primary-color);
         }
 
@@ -237,6 +259,63 @@
             100% { box-shadow: 0 0 0 0 rgba(214, 36, 159, 0); }
         }
 
+        /* MultiSport Banner Stili */
+        .multisport-banner {
+            background: linear-gradient(90deg, #141414 0%, #1a0f0a 50%, #141414 100%);
+            padding: 3rem 8%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #222;
+            gap: 2rem;
+        }
+
+        .ms-left-group {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .ms-logo {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .ms-content h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ms-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 650px;
+        }
+
+        .multisport-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .multisport-btn:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(255, 106, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
         /* Ortak Seksion Ayarları */
         section {
             padding: 6rem 8%;
@@ -363,13 +442,12 @@
         }
 
         .testimonial-card .stars {
-            color: #FFD700; /* Altın sarısı renk */
+            color: #FFD700;
             font-size: 1.4rem;
             margin-bottom: 1rem;
             letter-spacing: 2px;
         }
 
-        /* YARIM YILDIZ İÇİN CSS EKLENTİSİ */
         .half-star {
             background: linear-gradient(to right, #FFD700 50%, #444 50%);
             -webkit-background-clip: text;
@@ -496,6 +574,25 @@
                 opacity: 1;
                 background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 100%);
             }
+
+            .multisport-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 3rem 5%;
+            }
+
+            .ms-left-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .site-logo-img {
+                height: 38px;
+            }
         }
     </style>
 </head>
@@ -503,7 +600,11 @@
 
     <!-- Üst Menü -->
     <header>
-        <a href="#" class="logo">Bayan Spor <span>Pilates</span></a>
+        <!-- Kendi Logonuzun Eklendiği Bölüm -->
+        <a href="#" class="logo-container">
+            <img src="logobayan.png" alt="Bayan Spor Pilates Logo" class="site-logo-img">
+            <span class="logo-text">Bayan Spor <span>Pilates</span></span>
+        </a>
         <nav>
             <ul>
                 <li><a href="#hizmetler">Hizmetlerimiz</a></li>
@@ -537,6 +638,18 @@
             <a href="https://wa.me/905433930698" class="btn btn-pulse" target="_blank">Hemen Ücretsiz Randevu Al</a>
         </div>
     </section>
+
+    <!-- MultiSport Anlaşması Banner -->
+    <div class="multisport-banner fade-in">
+        <div class="ms-left-group">
+            <img src="5 (1).png" alt="MultiSport Logo" class="ms-logo">
+            <div class="ms-content">
+                <h3>MultiSport Kart Geçerlidir!</h3>
+                <p>Benefit Systems / MultiSport üyeliğiniz ile stüdyomuzdan ek ücret ödemeden faydalanabilirsiniz.</p>
+            </div>
+        </div>
+        <a href="https://benefitsystems.com.tr/tesisler/bayan-spor-bagcilar/" class="multisport-btn" target="_blank">Tesis Sayfamızı İncele</a>
+    </div>
 
     <!-- Hizmetler -->
     <section id="hizmetler">
@@ -595,7 +708,6 @@
                 <h4>AYŞE</h4>
             </div>
             <div class="testimonial-card fade-in" style="transition-delay: 0.4s;">
-                <!-- BURASI 4.5 YILDIZ OLARAK GÜNCELLENDİ -->
                 <div class="stars">★★★★<span class="half-star">★</span></div>
                 <p>"Ben Fatma, 44 yaşındayım. Uzun yıllar spor yapmadığım için eklem ağrılarım başlamıştı. Pilatesle tanıştıktan sonra ağrılarım azaldı, kendimi gençleşmiş gibi hissediyorum. Burada sadece spor yapmıyorum, çok güzel sosyalleşiyorum."</p>
                 <h4>FATMA</h4>
