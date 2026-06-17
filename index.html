@@ -362,6 +362,21 @@
             position: relative;
         }
 
+        .testimonial-card .stars {
+            color: #FFD700; /* Altın sarısı renk */
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        /* YARIM YILDIZ İÇİN CSS EKLENTİSİ */
+        .half-star {
+            background: linear-gradient(to right, #FFD700 50%, #444 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
         .testimonial-card p {
             font-style: italic;
             color: var(--text-light);
@@ -477,7 +492,6 @@
             section { padding: 4rem 5%; }
             .section-title { font-size: 2.2rem; }
             
-            /* İşte burası mobilde resim yazılarını sürekli açık tutan sihirli kısım */
             .gallery-overlay {
                 opacity: 1;
                 background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 100%);
@@ -571,14 +585,18 @@
         <h2 class="section-title fade-in">Üyelerimiz <span>Ne Diyor?</span></h2>
         <div class="testimonials-grid">
             <div class="testimonial-card fade-in">
+                <div class="stars">★★★★★</div>
                 <p>"Ben Elif, 32 yaşındayım ve öğretmenim. Yoğun tempomdan dolayı sürekli bel ve sırt ağrıları çekiyordum. Bağcılar'daki bu stüdyoya katıldıktan sonra hem ağrılarım azaldı hem de kendimi çok daha enerjik hissetmeye başladım."</p>
                 <h4>ELİF (Öğretmen)</h4>
             </div>
             <div class="testimonial-card fade-in" style="transition-delay: 0.2s;">
+                <div class="stars">★★★★★</div>
                 <p>"Ben Ayşe, 27 yaşındayım. Masa başında çalıştığım için hızla kilo almaya başlamıştım ve sürekli yorgun hissediyordum. Pilates sayesinde hem kilo verdim hem de çok daha dinç birine dönüştüm. Artık iş çıkışı spor yapmayı dört gözle bekliyorum."</p>
                 <h4>AYŞE</h4>
             </div>
             <div class="testimonial-card fade-in" style="transition-delay: 0.4s;">
+                <!-- BURASI 4.5 YILDIZ OLARAK GÜNCELLENDİ -->
+                <div class="stars">★★★★<span class="half-star">★</span></div>
                 <p>"Ben Fatma, 44 yaşındayım. Uzun yıllar spor yapmadığım için eklem ağrılarım başlamıştı. Pilatesle tanıştıktan sonra ağrılarım azaldı, kendimi gençleşmiş gibi hissediyorum. Burada sadece spor yapmıyorum, çok güzel sosyalleşiyorum."</p>
                 <h4>FATMA</h4>
             </div>
